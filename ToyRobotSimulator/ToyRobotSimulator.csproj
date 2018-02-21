@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F5C5E932-8F28-4B03-845D-743BF1FEEEE6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ToyRobotSimulator</RootNamespace>
+    <AssemblyName>ToyRobotSimulator</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogic\CommandConsoleReader.cs" />
+    <Compile Include="BusinessLogic\CommandManager.cs" />
+    <Compile Include="BusinessLogic\ReportCommand.cs" />
+    <Compile Include="BusinessLogic\ReportConsoleDisplay.cs" />
+    <Compile Include="BusinessLogic\RightCommand.cs" />
+    <Compile Include="BusinessLogic\LeftCommand.cs" />
+    <Compile Include="BusinessLogic\RobotAppController.cs" />
+    <Compile Include="Interfaces\ICommandReader.cs" />
+    <Compile Include="Interfaces\IReportDisplay.cs" />
+    <Compile Include="Models\CommandType.cs" />
+    <Compile Include="Models\ReportCommandParam.cs" />
+    <Compile Include="Models\RightCommandParam.cs" />
+    <Compile Include="Models\LeftCommandParam.cs" />
+    <Compile Include="Models\Robot.cs" />
+    <Compile Include="Validators\CommandParamValidator.cs" />
+    <Compile Include="Models\Direction.cs" />
+    <Compile Include="Validators\DirectionValidator.cs" />
+    <Compile Include="Interfaces\IDirectionValidator.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\ICommandManager.cs" />
+    <Compile Include="Interfaces\ICommandParam.cs" />
+    <Compile Include="Interfaces\ICommandParamValidator.cs" />
+    <Compile Include="Interfaces\ISurfaceCoordinateValidator.cs" />
+    <Compile Include="BusinessLogic\PlaceCommand.cs" />
+    <Compile Include="Models\PlaceCommandParam.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\RobotPosition.cs" />
+    <Compile Include="Models\SurfaceCoordinate.cs" />
+    <Compile Include="BusinessLogic\MoveCommand.cs" />
+    <Compile Include="Models\MoveCommandParam.cs" />
+    <Compile Include="Validators\SurfaceCoordinateValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
